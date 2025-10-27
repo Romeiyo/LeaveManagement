@@ -1,13 +1,12 @@
-<!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - FlexiLeave</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave History</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
     <!-- Sidebar -->
     <div class="sidebar">
       <div class="logo-section">
@@ -183,80 +182,33 @@
       </nav>
     </div>
 
-    <!-- Main Content -->
     <div class="main-content">
-      <div class="header">
+        <div class="header">
         <h1 class="header-title">Dashboard</h1>
-      </div>
-
-      <div class="content-container">
-        <div class="table-wrapper">
-          <table class="leave-table">
-            <thead>
-              <tr>
-                <th>Employee Number</th>
-                <th>Employee Name</th>
-                <th>Amount Of Days</th>
-                <th>Type of Leave</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr onclick="viewRequest('EMP12345')">
-                <td>EMP12345</td>
-                <td>Khala Mamosa</td>
-                <td>3 days</td>
-                <td>Sick Leave</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr onclick="viewRequest('EMP54321')">
-                <td>EMP54321</td>
-                <td>John Cena</td>
-                <td>2 days</td>
-                <td>Maternity leave</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr onclick="viewRequest('EMP12121')">
-                <td>EMP12121</td>
-                <td>Roman Anoai</td>
-                <td>7 days</td>
-                <td>Family related</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr onclick="viewRequest('EMP12221')">
-                <td>EMP12221</td>
-                <td>Keith Orton</td>
-                <td>2 days</td>
-                <td>Maternity leave</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr onclick="viewRequest('EMP22121')">
-                <td>EMP22121</td>
-                <td>Adam Cole</td>
-                <td>10 days</td>
-                <td>Annual leave</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr onclick="viewRequest('EMP65223')">
-                <td>EMP65223</td>
-                <td>Adam Page</td>
-                <td>5 days</td>
-                <td>Sick leave</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr onclick="viewRequest('EMP35716')">
-                <td>EMP35716</td>
-                <td>Cody Rhodes</td>
-                <td>2 days</td>
-                <td>Family Related</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
 
-    <script src="js/supervisor.js"></script>
-  </body>
+        <!<div class="table-container">
+            <div id="loadingMessage" class="loading">Loading leave history...</div>
+            <div id="errorMessage" class="error" style="display: none;"></div>
+            <div id="tableWrapper" style="display: none;">
+                <table id="leaveTable">
+                    <thead>
+                        <tr>
+                            <th>Employee Number</th>
+                            <th>Employee Name</th>
+                            <th>Amount Of Days</th>
+                            <th>Type of Leave</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div id="noDataMessage" class="no-data" style="display: none;">No leave history found.</div>
+        </div>
+    </div>
+
+    <script type="module" src="js/history.js"></script>
+</body>
 </html>

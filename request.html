@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Requests</title>
+  <link rel="stylesheet" href="css/request.css">
+</head>
+<body>
+
+  <div class="header">
+    <button class="back-button" onclick="goBack()">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <h1 class="header-title">Leave Requests</h1>
+  </div>
+
+  <div class="request-card">
+    <div class="profile-section">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Employee Photo" class="profile-image">
+      <h2 class="employee-name">Khala Mamosa</h2>
+      <p class="employee-position">Software Developer</p>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Start Date</label>
+        <input type="text" class="form-input" value="01/09/2025" disabled>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">End Date</label>
+        <input type="text" class="form-input" value="03/09/2025" disabled>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Type Of Leave</label>
+        <input type="text" class="form-input" value="Sick Leave" disabled>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Reason</label>
+        <input type="text" class="form-input" value="" disabled>
+      </div>
+
+      <div class="form-group full-width">
+        <label class="form-label">Additional Materials</label>
+        <button class="file-download" onclick="downloadFile()">
+          <span>Doctor's Note.pdf</span>
+          <div class="download-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 15L12 3M12 15L8 11M12 15L16 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 15V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn btn-approve" onclick="showModal('approve')">Approve</button>
+      <button class="btn btn-reject" onclick="showModal('reject')">Reject</button>
+      <!--<button class="btn btn-suggest" onclick="showModal('suggest')">Suggest</button>-->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Confirm Action</h2>
+      <p id="modal-message">Are you sure you want to perform this action?</p>
+      <div class="modal-buttons">
+        <button class="modal-btn modal-btn-confirm" onclick="confirmAction()">Confirm</button>
+        <button class="modal-btn modal-btn-cancel" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/request.js"></script>
+
+</body>
+</html>

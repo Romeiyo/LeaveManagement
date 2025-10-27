@@ -15,15 +15,24 @@ import{
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCz_GUEjGA_gw_3m2MwUvC_gA55ZuuUEdw",
+//   authDomain: "leavemanagementsystem-516f3.firebaseapp.com",
+//   projectId: "leavemanagementsystem-516f3",
+//   storageBucket: "leavemanagementsystem-516f3.firebasestorage.app",
+//   messagingSenderId: "222395625879",
+//   appId: "1:222395625879:web:abc62677380427bcef54d2",
+//   measurementId: "G-LMED77CNJW",
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCz_GUEjGA_gw_3m2MwUvC_gA55ZuuUEdw",
-  authDomain: "leavemanagementsystem-516f3.firebaseapp.com",
-  projectId: "leavemanagementsystem-516f3",
-  storageBucket: "leavemanagementsystem-516f3.firebasestorage.app",
-  messagingSenderId: "222395625879",
-  appId: "1:222395625879:web:abc62677380427bcef54d2",
-  measurementId: "G-LMED77CNJW",
-};
+    apiKey: "AIzaSyC6ufr9SsUFzsizqMUP-YvAh7LJGLuuERs",
+    authDomain: "leave-management-90278.firebaseapp.com",
+    projectId: "leave-management-90278",
+    storageBucket: "leave-management-90278.firebasestorage.app",
+    messagingSenderId: "572060224001",
+    appId: "1:572060224001:web:b41c49d70cd42ab153ce00"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -57,10 +66,11 @@ submit.addEventListener("click", function (event) {
     .then((docSnap)=>{
       if (docSnap.exists()){
         const userData = docSnap.data();
-        const userRole = userData.role;
+        const userRole = userData.Role;
+        const userName = userData.FullName;
 
         if(userRole === selectedRole){
-          messageElement.textContent = 'Login Successful!';
+          messageElement.textContent = 'Welcome ' + userName;
           messageElement.style.color = 'green';
 
           redirectBasedOnRole(userRole);
@@ -96,7 +106,8 @@ function redirectBasedOnRole(role){
         window.location.href = 'hod.html';
         break
       default:
-        window.location.href = 'default.html';
+        window.location.href = 'login.html';
     }
   }, 1000);
 }
+
