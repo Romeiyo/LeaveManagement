@@ -25,6 +25,12 @@ document.querySelector('.nav-item.logout').addEventListener('click', function(e)
   }
 });
 
+// document.querySelector('.nav-item.history').addEventListener('click', function(e){
+//   e.preventDefault();
+
+//   window.location.href = 'history.html'
+// })
+
 // Add active state to nav items
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', function(e) {
